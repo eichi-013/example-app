@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Tweet extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     
     // テーブル名がクラス名のスネークケースかつ複数形でない場合はひも付けが必要
     protected $table = 'tweets';

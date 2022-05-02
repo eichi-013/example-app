@@ -66,6 +66,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // 例　sampleがミドルウェアのエイリアスになる
-        'sample' =>\App\Http\Middleware\SampleMiddleware::class 
+        // 'sample' =>\App\Http\Middleware\SampleMiddleware::class 
     ];
 }
