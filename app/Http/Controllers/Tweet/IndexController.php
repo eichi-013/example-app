@@ -22,6 +22,10 @@ class IndexController extends Controller
         // $tweets = Tweet::orderBy('created_at','DESC')->get();  //SQL実行時にソートして取得（こちらのほうが高速）
         //$tweets = Tweet::all()->sortbyDesc('created_at')   //こちらでも同じだが、allメソッドで取得してからphp側で並び替え処理
      
+        // // デバック用（あとで戻す）
+        // dump($tweets);
+        // app(\App\Exceptions\Handler::class)->render(request(), throw new \Error('dump report.'));
+
         return view('tweet.index')
             ->with('tweets', $tweets);
         

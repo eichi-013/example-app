@@ -14,13 +14,20 @@ class Tweet extends Model
         return $this->belongsTo(User::class);
     }
     
+    public function images()
+    {
+        return $this->belongsToMany(Image::class, 'tweet_images')
+        ->using(TweetImage::class);
+    }
     // テーブル名がクラス名のスネークケースかつ複数形でない場合はひも付けが必要
-    protected $table = 'tweets';
+    // protected $table = 'tweets';
 
     // 主キーの名前がidではなくtweetIdのように違う場合、モデル側に対応する名前を宣言する必要がある
     // protected $primaryKey = 'tweetId';   ←今回は不要
-    public $incrementing = false;
-    protected $keyType = 'string';
+    
+    // ★要注意！！
+    // public $incrementing = false;
+    // protected $keyType = 'string';
 
     // タイムスタンプが不要な場合
     // public $timestamps = false;
